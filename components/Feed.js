@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useAtom } from "jotai";
 import Input from "./Input";
 import { handlePostState, useSSRPostsState } from "../atoms/postAtom";
-import Post from "./Post";
+// import Post from "./Post";
 
 function Feed({ posts }) {
 //   const [realtimePosts, setRealtimePosts] = useState([]);
@@ -29,9 +29,9 @@ function Feed({ posts }) {
     <div className="space-y-6 pb-24 max-w-lg">
       <Input />
       {/* Posts */}
-      {!useSSRPosts
+      {/* {!useSSRPosts
         ? realtimePosts.map((post) => <Post key={post._id} post={post} />)
-        : posts.map((post) => <Post key={post._id} post={post} />)}
+        : posts.map((post) => <Post key={post._id} post={post} />)} */}
     </div>
   );
 }

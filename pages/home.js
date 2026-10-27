@@ -1,5 +1,5 @@
 import Image from "next/image";
-import HeaderLink from "../app/components/HeaderLink";
+import HeaderLink from "../components/HeaderLink";
 import ExploreIcon from "@mui/icons-material/Explore";
 import GroupIcon from "@mui/icons-material/Group";
 import OndemandVideoSharpIcon from "@mui/icons-material/OndemandVideoSharp";
