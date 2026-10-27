@@ -8,8 +8,8 @@ import Feed from "../components/Feed";
 import Header from "../components/Header";
 import Modal from "../components/Modal";
 import Sidebar from "../components/Sidebar";
-// import Widgets from "./components/Widgets";
-// import { connectToDatabase } from "./util/mongodb";
+import Widgets from "../components/Widgets";
+import { connectToDatabase } from "./util/mongodb";
 
 export default function Home({ posts, articles }) {
   const [modalOpen, setModalOpen] = useAtom(modalState);
