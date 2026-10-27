@@ -10,7 +10,7 @@ export async function proxy(req) {
     });
     // You could also check for any property on the session object,
     // like role === "admin" or name === "John Doe", etc.
-    if (!session) return NextResponse.redirect("/home");
+    if (!session) return NextResponse.redirect(new URL("/home", req.url));
     // If user is authenticated, continue.
   }
 }
