@@ -3,17 +3,17 @@ import { getSession, useSession } from "next-auth/react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useAtom } from "jotai";
-// import { modalState, modalTypeState } from "../atoms/modalAtom";
-import Feed from "./components/Feed";
-import Header from "./components/Header";
-// import Modal from "./components/Modal";
-import Sidebar from "./components/Sidebar";
+import { modalState, modalTypeState } from "../atoms/modalAtom";
+import Feed from "../app/components/Feed";
+import Header from "../app/components/Header";
+import Modal from "../app/components/Modal";
+import Sidebar from "../app/components/Sidebar";
 // import Widgets from "./components/Widgets";
 // import { connectToDatabase } from "./util/mongodb";
 
 export default function Home({ posts, articles }) {
-  // const [modalOpen, setModalOpen] = useAtom(modalState);
-  // const [modalType, setModalType] = useAtom(modalTypeState);
+  const [modalOpen, setModalOpen] = useAtom(modalState);
+  const [modalType, setModalType] = useAtom(modalTypeState);
   const router = useRouter();
   const { status } = useSession({
     required: true,
@@ -39,9 +39,9 @@ export default function Home({ posts, articles }) {
         </div>
         {/* <Widgets articles={articles} /> */}
         <AnimatePresence>
-          {/* {modalOpen && (
+          {modalOpen && (
             <Modal handleClose={() => setModalOpen(false)} type={modalType} />
-          )} */}
+          )}
         </AnimatePresence>
       </main>
     </div>
