@@ -37,7 +37,7 @@ export default function Home({ posts, articles }) {
           <Sidebar />
           <Feed posts={posts} />
         </div>
-        {/* <Widgets articles={articles} /> */}
+        <Widgets articles={articles} />
         <AnimatePresence>
           {modalOpen && (
             <Modal handleClose={() => setModalOpen(false)} type={modalType} />
@@ -60,32 +60,32 @@ export async function getServerSideProps(context) {
     };
   }
 
-  // // Get posts on SSR
-  // const { db } = await connectToDatabase();
-  // const posts = await db
-  //   .collection("posts")
-  //   .find()
-  //   .sort({ timestamp: -1 })
-  //   .toArray();
+  // Get posts on SSR
+  const { db } = await connectToDatabase();
+  const posts = await db
+    .collection("posts")
+    .find()
+    .sort({ timestamp: -1 })
+    .toArray();
 
-  // // Get Google News API
-  // const results = await fetch(
-  //   `https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.NEWS_API_KEY}`
-  // ).then((res) => res.json());
+  // Get Google News API
+  const results = await fetch(
+    `https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.NEWS_API_KEY}`
+  ).then((res) => res.json());
 
   return {
     props: {
       session,
-      // articles: results.articles,
-      // posts: posts.map((post) => ({
-      //   _id: post._id.toString(),
-      //   input: post.input,
-      //   photoUrl: post.photoUrl,
-      //   username: post.username,
-      //   email: post.email,
-      //   userImg: post.userImg,
-      //   createdAt: post.createdAt,
-      // })),
+      articles: results.articles,
+      posts: posts.map((post) => ({
+        _id: post._id.toString(),
+        input: post.input,
+        photoUrl: post.photoUrl,
+        username: post.username,
+        email: post.email,
+        userImg: post.userImg,
+        createdAt: post.createdAt,
+      })),
     },
   };
 }
