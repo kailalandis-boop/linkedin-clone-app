@@ -37,7 +37,7 @@ function Widgets({ articles }) {
       <div className="bg-white dark:bg-[#1D2226] w-11/12 h-64 px-2.5 rounded-lg sticky top-20 border border-gray-300 dark:border-none">
         <div className="relative w-full h-full">
           <Image
-            src="https://rb.gy/kbfeaa"
+            src="/widget-img.jpg"
             layout="fill"
             objectFit="contain"
             priority
