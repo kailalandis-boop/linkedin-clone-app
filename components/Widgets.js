@@ -39,7 +39,7 @@ function Widgets({ articles }) {
           <Image
             src="/widget-img.jpg"
             layout="fill"
-            objectFit="contain"
+            style={{ objectFit: "contain"}}
             priority
           />
         </div>

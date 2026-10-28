@@ -15,6 +15,7 @@ function Sidebar() {
           <Image src="/sidebar-img.avif" 
             layout="fill" 
             priority 
+            sizes=""
            />
         </div>
         <Avatar
