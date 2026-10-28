@@ -35,7 +35,7 @@ function Header() {
         {mounted && (
           <>
             {resolvedTheme === "dark" ? (
-              <Image src="/dark-mode-logo.svg" 
+              <Image src="/dark-mode-logo.png" 
                 width={45} 
                 height={45} 
               />
